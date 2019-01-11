@@ -4,7 +4,7 @@ const form = document.querySelector('#form')
   form.addEventListener('submit', handleFormSubmit)
 
 const deleteButton = document.querySelector('#delete_all')
-  deleteButton.addEventListener('submit', deleteAllSubmit)
+  deleteButton.addEventListener('click', deleteAllClick)
 
 })
 
@@ -36,14 +36,15 @@ const listItem = document.createElement('div')
   listItem.appendChild(createListAircraftType)
 
 
-const list = document.querySelector('#spotting-list')
-list.appendChild(listItem)
-
-event.target.reset()
-
+  const list = document.querySelector('#spotting-list')
+  list.appendChild(listItem)
 }
 
-const deleteAllSubmit = function (event){
+const deleteAllClick = function (event){
   event.preventDefault();
-
+  // console.log('hello');
+  const deleteList = document.querySelector('#spotting-list')
+  while (deleteList.firstChild) {
+    deleteList.firstChild.remove();
+  }
 }
