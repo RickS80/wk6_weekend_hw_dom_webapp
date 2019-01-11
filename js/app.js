@@ -6,6 +6,21 @@ const form = document.querySelector('#form')
 const deleteButton = document.querySelector('#delete_all')
   deleteButton.addEventListener('click', deleteAllClick)
 
+const dateInput = document.querySelector('#date')
+dateInput.addEventListener('input', handleDate)
+
+
+const textInputAirline = document.querySelector('#airline-input')
+textInputAirline.addEventListener('input', handleAirlineInput)
+
+const textInputRegistration = document.querySelector('#registration-input')
+textInputRegistration.addEventListener('input', handleRegistrationInput)
+
+const selectType = document.querySelector('#aircraftType')
+selectType.addEventListener('change', handleAircraftType)
+
+
+
 })
 
 const handleFormSubmit = function (event){
@@ -38,6 +53,8 @@ const listItem = document.createElement('div')
 
   const list = document.querySelector('#spotting-list')
   list.appendChild(listItem)
+
+  event.target.reset()
 }
 
 const deleteAllClick = function (event){
@@ -47,4 +64,26 @@ const deleteAllClick = function (event){
   while (deleteList.firstChild) {
     deleteList.firstChild.remove();
   }
+}
+
+
+const handleDate = function(){
+  const resultInput = document.querySelector('#date-input-result');
+  resultInput.textContent = `Date: ${event.target.value}`
+}
+
+const handleAirlineInput = function(){
+  const resultInput = document.querySelector('#input-result-airline');
+  resultInput.textContent = `Airline:  ${event.target.value}`
+
+  }
+
+const handleRegistrationInput = function(){
+  const resultInput = document.querySelector('#input-result-registration');
+  resultInput.textContent = `Registration:  ${event.target.value}`
+  }
+
+const handleAircraftType = function(){
+  const resultInput = document.querySelector('#aircraft-type-result');
+  resultInput.textContent = `Aircraft Type: ${event.target.value}`
 }

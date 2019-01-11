@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>planeSpotters</title>
-    <script src="js/app.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-<h1>Welcome JS planeSpotters!</h1>
-<hr>
-<h2>Please enter details of your spotting below:</h2>
+<head>
+  <meta charset="utf-8">
+  <title>planeSpotters</title>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <h1>Welcome JS planeSpotters!</h1>
+  <hr>
+  <div class="row">
 
-<form id="form">
+
+  <div class="column">
+
+
+  <h2>Please enter details of your spotting below:</h2>
+
+  <form id="form">
 
 
     <label for="date">Spotting Date</label>
     <input type="date" name="date" id="date"/>
-<br>
-<br>
+    <br>
+    <br>
 
     <label for="airline">Airline</label>
-    <input id="input" type="text" name="airline" id="airline" />
+    <input id="airline-input" type="text" name="airline" id="airline" />
 
-<br>
-<br>
+
+    <br>
+    <br>
 
     <label for="registration">Registration</label>
-    <input id="input" type="text" name="registration" id="registration"/>
+    <input id="registration-input" type="text" name="registration"/>
 
 
-<br>
-<br>
+    <br>
+    <br>
 
 
     <label for="select">Aircraft Type</label>
-    <select id="select" name="aircraftType" id="aircraftType">
+    <select name="aircraftType" id="aircraftType">
       <option disabled selected>Enter the aircraft type</option>
       <option value="Airbus A319">Airbus A319</option>
       <option value="Airbus A320">Airbus A320</option>
@@ -49,24 +56,37 @@
       <option value="Boeing 777">Boeing 777</option>
       <option value="Boeing 787">Boeing 787</option>
     </select>
-<br>
-<br>
+    <br>
+    <br>
 
-  <button type="submit" id="submit_name">Submit Spotting</button>
-      </form>
-
-      <hr>
-
-
-      <h2>Spotting History</h2>
-
-      <button type="button" id="delete_all">Delete History</button>
-        <hr>
-<div id="spotting-list" class = "spotting-list">
+    <button type="submit" id="submit_name">Submit Spotting</button>
+  </form>
+  </div>
 
 
-        </div>
+  <div class="column">
+
+      <h2>Latest Entry:</h2>
+        <p id="date-input-result">Date will appear here</p>
+        <p id="input-result-airline">Airline will appear here</p>
+        <p id="input-result-registration">Registration will appear here</p>
+        <p id="aircraft-type-result">Aircraft type will appear here</p>
+
+    </div>
+  </div>
+
+<hr>
+  <h2>Spotting History</h2>
 
 
-  </body>
+
+  <button type="button" id="delete_all">Delete History</button>
+  <hr>
+  <div id="spotting-list">
+  
+
+  </div>
+
+
+</body>
 </html>
