@@ -19,8 +19,6 @@ textInputRegistration.addEventListener('input', handleRegistrationInput)
 const selectType = document.querySelector('#aircraftType')
 selectType.addEventListener('change', handleAircraftType)
 
-
-
 })
 
 const handleFormSubmit = function (event){
@@ -31,22 +29,25 @@ console.log(event.target.airline.value);
 console.log(event.target.registration.value);
 console.log(event.target.aircraftType.value);
 
-const listItem = document.createElement('div')
+const listItem = document.createElement('ul')
 
 
-  const createListDate = document.createElement('p')
-  createListDate.textContent = `Date: ${event.target.date.value}`
+  const createListDate = document.createElement('li')
+  const dateObject = new Date(event.target.date.value)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  console.log(dateObject.toLocaleDateString('en-GB', options));
+  createListDate.textContent = `Date: ${dateObject.toLocaleDateString('en-GB', options)}`
   listItem.appendChild(createListDate)
 
-  const createListAirline = document.createElement('p')
+  const createListAirline = document.createElement('li')
   createListAirline.textContent = `Airline: ${event.target.airline.value}`
   listItem.appendChild(createListAirline)
 
-  const createListRegistration = document.createElement('p')
+  const createListRegistration = document.createElement('li')
   createListRegistration.textContent = `Registration: ${event.target.registration.value}`
   listItem.appendChild(createListRegistration)
 
-  const createListAircraftType = document.createElement('p')
+  const createListAircraftType = document.createElement('li')
   createListAircraftType.textContent = `Aircraft Type: ${event.target.aircraftType.value}`
   listItem.appendChild(createListAircraftType)
 
@@ -54,7 +55,13 @@ const listItem = document.createElement('div')
   const list = document.querySelector('#spotting-list')
   list.appendChild(listItem)
 
+
+
+
+
+
   event.target.reset()
+
 }
 
 const deleteAllClick = function (event){
@@ -69,7 +76,9 @@ const deleteAllClick = function (event){
 
 const handleDate = function(){
   const resultInput = document.querySelector('#date-input-result');
-  resultInput.textContent = `Date: ${event.target.value}`
+  const dateObject = new Date(event.target.value)
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  resultInput.textContent = `Date: ${dateObject.toLocaleDateString('en-GB', options)}`
 }
 
 const handleAirlineInput = function(){
